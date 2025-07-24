@@ -19,6 +19,7 @@ const errorHandler = (error, request, response, next) => {
 
 morgan.token('data', (req, res) => JSON.stringify(req.body));
 
+app.use(express.static('dist'));
 app.use(cors());
 app.use(express.json());
 app.use(morgan(':method :url :status :data - :response-time ms'));
